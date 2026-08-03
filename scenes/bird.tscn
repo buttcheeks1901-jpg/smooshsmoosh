@@ -5,14 +5,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(30, 30)
 
+[sub_resource type="Texture2D" id="Texture2D_white"]
+size = Vector2i(1, 1)
+
 [node name="Bird" type="CharacterBody2D"]
 collision_layer = 1
 collision_mask = 2
 script = ExtResource("1_bird")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-color = Color(1, 1, 0, 1)
+scale = Vector2(30, 30)
+modulate = Color(1, 1, 0, 1)
+texture = SubResource("Texture2D_white")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1")
