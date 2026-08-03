@@ -1,15 +1,17 @@
 ```
 # Godot-specific ignores
 *.import
-*.pidb
-.rsp
-.addon_list
-.editor_settings-4.tres
+export_presets.cfg
 .godot/
 
-# Build artifacts
-export_presets.cfg
-
 # Dependencies
-addons/
+res://addons/
+
+# Build artifacts
+*.scn~
+
+# Temp files
+*.tmp
+*.bak
+*~
 ```
