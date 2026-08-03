@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://main"]
+
+[ext_resource type="PackedScene" uid="uid://bird" path="res://scenes/bird.tscn" id="1_bird"]
+[ext_resource type="PackedScene" uid="uid://pipe" path="res://scenes/pipe.tscn" id="2_pipe"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="3_main"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_score"]
+font_size = 32
+font_color = Color(1, 1, 1, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gameover"]
+font_size = 48
+font_color = Color(1, 0, 0, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("3_main")
+bird_scene = ExtResource("1_bird")
+pipe_scene = ExtResource("2_pipe")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 360)
+scale = Vector2(480, 720)
+color = Color(0.4, 0.7, 1, 1)
+
+[node name="Bird" parent="." instance=ExtResource("1_bird")]
+position = Vector2(100, 360)
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 60.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_score")
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 140.0
+offset_top = 300.0
+offset_right = 340.0
+offset_bottom = 360.0
+text = "GAME OVER"
+horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_gameover")
+visible = false
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 165.0
+offset_top = 380.0
+offset_right = 315.0
+offset_bottom = 420.0
+text = "Restart"
+visible = false
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
