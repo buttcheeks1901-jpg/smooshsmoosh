@@ -21,9 +21,11 @@ script = ExtResource("3_main")
 bird_scene = ExtResource("1_bird")
 pipe_scene = ExtResource("2_pipe")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(240, 360)
-scale = Vector2(480, 720)
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 480.0
+offset_bottom = 720.0
 color = Color(0.4, 0.7, 1, 1)
 
 [node name="Bird" parent="." instance=ExtResource("1_bird")]

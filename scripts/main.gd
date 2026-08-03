@@ -41,7 +41,7 @@ func spawn_pipe() -> void:
 func check_score() -> void:
 	for child in get_children():
 		if child is Area2D and child.has_method("_on_body_entered"):
-			if not child.has_passed and child.position.x < bird.position.x:
+			if not child.has_passed and child.global_position.x < bird.global_position.x:
 				child.has_passed = true
 				score += 1
 				update_score_display()
