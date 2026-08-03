@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal game_over
+
 @export var jump_strength: float = -300.0
 @export var gravity: float = 980.0
 
@@ -24,5 +26,3 @@ func _physics_process(delta: float) -> void:
 	# Check if bird fell off screen
 	if position.y > 750:
 		emit_signal("game_over")
-
-signal game_over

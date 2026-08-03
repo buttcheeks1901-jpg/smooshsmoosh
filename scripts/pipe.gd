@@ -24,7 +24,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_signal("game_over"):
-		body.game_over.emit()
-
-func _on_visibility_notifier_2d_screen_exited() -> void:
-	queue_free()
+		body.emit_signal("game_over")
