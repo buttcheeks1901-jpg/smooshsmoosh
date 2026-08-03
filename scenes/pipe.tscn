@@ -14,13 +14,8 @@ size = Vector2(100, 600)
 [sub_resource type="Texture2D" id="Texture2D_white"]
 size = Vector2i(1, 1)
 
-[node name="Pipe" type="Area2D"]
-collision_layer = 2
-collision_mask = 0
+[node name="Pipe" type="Node2D"]
 script = ExtResource("1_pipe")
-
-[node name="AreaShape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_area")
 
 [node name="TopPipe" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -48,4 +43,12 @@ texture = SubResource("Texture2D_white")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
 shape = SubResource("RectangleShape2D_bottom")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="ScoreArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 1
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+shape = SubResource("RectangleShape2D_area")
+
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_body_entered"]

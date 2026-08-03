@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 @export var speed: float = 200.0
 @export var spawn_height_range: Vector2 = Vector2(100, 400)
@@ -24,4 +24,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_signal("game_over"):
-		body.emit_signal("game_over")
+		body.get_parent().emit_signal("game_over")
