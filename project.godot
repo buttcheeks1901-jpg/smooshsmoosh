@@ -1,0 +1,12 @@
+[gd_resource type="Project" load_steps=2 format=3 uid="uid://project"]
+
+[resource]
+
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/name="Flappy Bird Clone"
+run/main_scene="res://scenes/main.tscn"
+application/config/name="Flappy Bird Clone"
+application/run/main_scene="res://scenes/main.tscn"
+display/window/size/viewport_width=480
+display/window/size/viewport_height=720
+display/window/stretch/mode="canvas_items"

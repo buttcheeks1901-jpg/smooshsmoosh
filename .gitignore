@@ -1,0 +1,20 @@
+```
+# Godot-specific ignores
+*.import
+*.uid
+export_presets.cfg
+.godot/
+
+# Dependencies
+res://addons/
+
+# Editor
+.vscode/
+.idea/
+*.tmp
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+```
